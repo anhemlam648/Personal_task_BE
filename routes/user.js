@@ -1,9 +1,9 @@
 const express = require('express');
 const router = express.Router();
 const UserController = require('../controllers/UserController');
-const firebaseUser = require('../middlewares/firebaseAuthMiddleware');
+const firebaseUser = require('../middlewares/firebaseUserMiddleware');
 
-router.post('/register', firebaseAuthMiddleware, authController.registerUser);
-router.post('/login', firebaseAuthMiddleware, authController.loginUser);
+router.post('/register', firebaseUser, UserController.registerUser);
+router.post('/login', firebaseUser, UserController.loginUser);
 
 module.exports = router;
