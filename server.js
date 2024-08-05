@@ -5,6 +5,9 @@ const mongoose = require('mongoose');
 //     useFindAndModify: false, 
 //     useCreateIndex: true
 //   });  
+const app = express();
+app.use(express.json()); // handle JSON in the request body
+
 const mongoURI = process.env.MONGODB_URI || 'mongodb+srv://nghia123:hoR84hLvcfDIlJQP@cluster0.e5ad3ky.mongodb.net/personal-task';
 async function connectToDatabase() {
   try {
