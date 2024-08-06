@@ -5,7 +5,7 @@ const firebaseUser = require('../middlewares/firebaseUserMiddleware');
 
 router.post('/addtask', firebaseUser, taskController.createTask);
 router.get('/', firebaseUser, taskController.getTasks);
-router.put('/:taskId', firebaseUser, taskController.updateTask);
-router.delete('/:taskId',firebaseUser, taskController.deleteTask);
+router.put('/edit/:taskId', firebaseUser, taskController.updateTask);
+router.delete('/delete/:taskId',firebaseUser, taskController.deleteTask);
 
 module.exports = router;
