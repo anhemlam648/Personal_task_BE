@@ -1,4 +1,7 @@
+const express = require('express');
 const mongoose = require('mongoose');
+const userRoutes = require('./routes/user');
+const taskRoutes = require('./routes/tasks');
 // mongoose.connect('mongodb+srv://nghia123:hoR84hLvcfDIlJQP@cluster0.e5ad3ky.mongodb.net/personal-task', {
 //     useNewUrlParser: true,
 //     useUnifiedTopology: true,
@@ -22,6 +25,7 @@ async function connectToDatabase() {
   
   //Routes
   app.use('/api', userRoutes);
+  app.use('/api/tasks', taskRoutes);
 
   const PORT = process.env.PORT || 8080;
     // console.log('Connected to MongoDB');
